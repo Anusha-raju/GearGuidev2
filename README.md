@@ -65,7 +65,7 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 - **Graph-Powered Insights**: Every problem is navigated through connected components and causes 
 ***
 
-# Hybrid Retrieval for RAG using Neo4j – Full Technical Document
+# Full Technical Document
 ![Graph Schema Overview](images/GearGuide.png)
 
 
@@ -160,7 +160,7 @@ RETURN node.name, score
 
 ---
 
-## hybrid_retriever
+## Hybrid_retriever
 
 **Function:** `Use ThreadPoolExecutor to parallelize vector and full-text search`  
 Combines dense and sparse scores:
