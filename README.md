@@ -353,4 +353,4 @@ Here's where we see it heading:
 [LinkedIn](http://www.linkedin.com/in/anusha-umashankar) | Email: anusha.u.raju@gmail.com
 
 [Dinesh Karnati](https://github.com/DineshKarnati)
-[LinkedIn](https://www.linkedin.com/in/%20dineshkarnati8099) | Email: dineshkarnati510@gmail.com
+[LinkedIn](https://www.linkedin.com/in/dineshkarnati/) | Email: dineshkarnati510@gmail.com
