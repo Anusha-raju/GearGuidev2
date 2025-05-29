@@ -17,9 +17,9 @@ Gear Guide combines the best of semantic search and knowledge graphs:
 1. **A Rich, Structured Knowledge Base** 
      We modeled technical car data as a graph in Neo4j, organizing relationships between components, symptoms, procedures, and problems. For example: 
 
-          a. "AC not cooling" connects to symptoms like "low airflow" and tests like "compressor pressure check". 
+     a. "AC not cooling" connects to symptoms like "low airflow" and tests like "compressor pressure check". 
 
-          b. "Remote key not working" links to "keyless entry malfunction", a common user concern. 
+     b. "Remote key not working" links to "keyless entry malfunction", a common user concern. 
 
 2. **Data Ingestion via LLM**
      Manuals and troubleshooting documents were converted into structured XML using a custom PDF-to-Graph pipeline powered by GPT. Tags like <symptom>, <procedure>, and <test> were extracted to feed into the Neo4j graph—no manual curation needed. 
@@ -292,13 +292,14 @@ Here's where we see it heading:
 
 Extend beyond vehicles into other verticals where structured troubleshooting is critical: 
 
-     a. **Consumer electronics** (e.g., phone won't charge → battery port → test cable → reset) 
+a. **Consumer electronics** (e.g., phone won't charge → battery port → test cable → reset) 
 
-     b. **Medical equipment** diagnostics for technicians 
+b. **Medical equipment** diagnostics for technicians 
 
-     c. **Smart home systems** (e.g., thermostat issues, smart lock malfunctions) 
+c. **Smart home systems** (e.g., thermostat issues, smart lock malfunctions) 
 
 2. **Continual Knowledge Ingestion**
+
 Automate ingestion of new manuals, guides, and repair logs in real-time using: 
 
 - Fine-tuned LLMs for multi-lingual manuals 
@@ -341,4 +342,4 @@ Partner with:
 [LinkedIn](http://www.linkedin.com/in/anusha-umashankar) | Email: anusha.u.raju@gmail.com
 
 [Dinesh Karnati](https://github.com/DineshKarnati)
-[LinkedIn](https://www.linkedin.com/in/dineshkarnati8099) | Email: dineshkarnati510@gmail.com
+[LinkedIn](https://www.linkedin.com/in/%20dineshkarnati8099) | Email: dineshkarnati510@gmail.com
