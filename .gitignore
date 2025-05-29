@@ -1,0 +1,9 @@
+# Ignore the instance folder
+instance/
+
+# Ignore the virtual environment folder
+venv/
+
+__pycache__/
+
+.env
