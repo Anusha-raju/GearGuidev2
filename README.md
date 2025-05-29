@@ -290,49 +290,49 @@ Here's where we see it heading:
 
 1. **Multi-Domain Diagnostic Assistant**
 
-Extend beyond vehicles into other verticals where structured troubleshooting is critical: 
+     Extend beyond vehicles into other verticals where structured troubleshooting is critical: 
 
-a. **Consumer electronics** (e.g., phone won't charge → battery port → test cable → reset) 
+     a. **Consumer electronics** (e.g., phone won't charge → battery port → test cable → reset) 
 
-b. **Medical equipment** diagnostics for technicians 
+     b. **Medical equipment** diagnostics for technicians 
 
-c. **Smart home systems** (e.g., thermostat issues, smart lock malfunctions) 
+     c. **Smart home systems** (e.g., thermostat issues, smart lock malfunctions) 
 
 2. **Continual Knowledge Ingestion**
 
-Automate ingestion of new manuals, guides, and repair logs in real-time using: 
+     Automate ingestion of new manuals, guides, and repair logs in real-time using: 
 
-- Fine-tuned LLMs for multi-lingual manuals 
+     - Fine-tuned LLMs for multi-lingual manuals 
 
-- Auto-tagging pipelines with confidence thresholds 
+     - Auto-tagging pipelines with confidence thresholds 
 
-- Crowdsourced updates from technician feedback 
+     - Crowdsourced updates from technician feedback 
 
 3. **Voice-Enabled Mobile Companion**
 
-Build a mobile app where users can: 
+     Build a mobile app where users can: 
 
-- Speak their car issues out loud ("my engine's rattling at startup") 
+     - Speak their car issues out loud ("my engine's rattling at startup") 
 
-- Get step-by-step procedures 
+     - Get step-by-step procedures 
 
-- Use AR overlays (e.g., guide you to open the hood, check the dipstick) 
+     - Use AR overlays (e.g., guide you to open the hood, check the dipstick) 
 
 4. **Closed-Loop Learning System**
 
-- Track which troubleshooting paths led to successful resolutions 
+     - Track which troubleshooting paths led to successful resolutions 
 
-- Reinforce the knowledge graph based on real-world usage 
+     - Reinforce the knowledge graph based on real-world usage 
 
-- Use reinforcement learning or fine-tuning to improve LLM grounding 
+     - Use reinforcement learning or fine-tuning to improve LLM grounding 
 
 5. **B2B Integration with Repair Shops**
 
-Partner with: 
+     Partner with: 
 
-- Automotive repair shops for technician-facing AI tools 
+     - Automotive repair shops for technician-facing AI tools 
 
-- Manufacturers for embedding Gear Guide in **owner apps**, **onboard systems**, or **support portals**.
+     - Manufacturers for embedding Gear Guide in **owner apps**, **onboard systems**, or **support portals**.
 
 
 
