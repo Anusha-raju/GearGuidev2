@@ -10,39 +10,39 @@
 
  
 
-##How It Works: Under the Hood of Gear Guide
+## How It Works: Under the Hood of Gear Guide
 
 Gear Guide combines the best of semantic search and knowledge graphs: 
 
-     1. **A Rich, Structured Knowledge Base** 
-          We modeled technical car data as a graph in Neo4j, organizing relationships between components, symptoms, procedures, and problems. For example: 
+1. **A Rich, Structured Knowledge Base** 
+     We modeled technical car data as a graph in Neo4j, organizing relationships between components, symptoms, procedures, and problems. For example: 
 
-               a. "AC not cooling" connects to symptoms like "low airflow" and tests like "compressor pressure check". 
+          a. "AC not cooling" connects to symptoms like "low airflow" and tests like "compressor pressure check". 
 
-               b. "Remote key not working" links to "keyless entry malfunction", a common user concern. 
+          b. "Remote key not working" links to "keyless entry malfunction", a common user concern. 
 
-     2. **Data Ingestion via LLM**
-          Manuals and troubleshooting documents were converted into structured XML using a custom PDF-to-Graph pipeline powered by GPT. Tags like <symptom>, <procedure>, and <test> were extracted to feed into the Neo4j graph—no manual curation needed. 
+2. **Data Ingestion via LLM**
+     Manuals and troubleshooting documents were converted into structured XML using a custom PDF-to-Graph pipeline powered by GPT. Tags like <symptom>, <procedure>, and <test> were extracted to feed into the Neo4j graph—no manual curation needed. 
 
-     3. **Hybrid Retrieval (Dense + Sparse)**
+3. **Hybrid Retrieval (Dense + Sparse)**
 
-          a. **Dense Retrieval** uses OpenAI’s embeddings + Neo4j vector index for semantic matches. 
+     a. **Dense Retrieval** uses OpenAI’s embeddings + Neo4j vector index for semantic matches. 
 
-          b. **Sparse Retrieval** uses full-text Lucene search to capture exact keyword hits. 
+     b. **Sparse Retrieval** uses full-text Lucene search to capture exact keyword hits. 
 
-          c. A **hybrid strategy** reranks results using a weighted score `(hybrid_score = α * dense + (1-α) * sparse)`, ensuring the best of both worlds: relevance and accuracy. 
+     c. A **hybrid strategy** reranks results using a weighted score `(hybrid_score = α * dense + (1-α) * sparse)`, ensuring the best of both worlds: relevance and accuracy. 
 
-     4. **Multi-Turn Conversations**
-          Every query goes through rephrasing and context injection, allowing the system to maintain continuity in chat sessions—an often-missing feature in traditional bots. 
+4. **Multi-Turn Conversations**
+     Every query goes through rephrasing and context injection, allowing the system to maintain continuity in chat sessions—an often-missing feature in traditional bots. 
 
-     5. **Interactive UI**
-          The frontend is built with Flask, providing a responsive interface where users can ask natural questions like: 
+5. **Interactive UI**
+     The frontend is built with Flask, providing a responsive interface where users can ask natural questions like: 
 
-          a. “Why isn’t my AC working?” 
+     a. “Why isn’t my AC working?” 
 
-          b. “How do I replace the bumper on a Yaris?” 
+     b. “How do I replace the bumper on a Yaris?” 
 
-          c. “What could cause dim headlights after engine start?” 
+     c. “What could cause dim headlights after engine start?” 
 
  
 
