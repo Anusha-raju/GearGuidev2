@@ -1,5 +1,9 @@
 ![GearGuide](ui/static/logo.png)
 
+The application is hosted on [GearGuide](http://44.206.249.251:5000/)
+
+Demo link: [GearGuide demo](https://youtu.be/n7t-G4YTJwc)
+
 # Gear Guide: A Graph-Powered AI Chatbot for Smarter Troubleshooting 
 
 ## The Problem:
