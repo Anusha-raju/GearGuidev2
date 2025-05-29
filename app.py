@@ -99,6 +99,7 @@ def chat():
         user_msg = Chat(session_id=session.id, message=message, timestamp=datetime.utcnow(), sender='user')
         response = rag_advisor(message)
         if response:
+            response = response.replace("```markdown", "").replace("```","")
             response = markdown.markdown(response)
         else:
             response = "Oops!!! Sorry...."

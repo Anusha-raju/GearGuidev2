@@ -7,9 +7,47 @@
 {% block sidebar %}{% endblock %}
 
 {% block content %}
-<div style="padding: 1rem;">
-    <h1>About Us</h1>
-    <p>Welcome to our website! We are dedicated to providing the best service possible.</p>
-    <p>This is a simple About Us page where you can share information about your company or project.</p>
+<div class="container mt-4" style="max-width: 850px;">
+    <h1 class="mb-4">About Gear Guide</h1>
+
+    <p>
+        When was the last time you asked a chatbot for help and got a useful, contextual answer? 
+        If you're like most users, the experience probably felt disjointed repetitive replies, no memory of past questions, and vague, unhelpful instructions.
+    </p>
+
+    <p>
+        <strong>Gear Guide</strong> was born from that frustration. It’s an AI-powered advisor designed to troubleshoot vehicle issues with the clarity, structure, and depth of a seasoned mechanic.
+        Unlike traditional bots, Gear Guide understands your context, remembers your questions, and delivers structured, actionable diagnostics.
+    </p>
+
+    <h3 class="mt-4">How It Works</h3>
+    <ul>
+        <li>Powered by a <strong>Neo4j knowledge graph</strong> of components, problems, symptoms, procedures, and more</li>
+        <li>Uses <strong>OpenAI embeddings</strong> to semantically understand your query</li>
+        <li>Combines <strong>dense (vector) and sparse (keyword)</strong> search for hybrid relevance</li>
+        <li>Automatically extracts structured data from car manuals via GPT no manual tagging required</li>
+        <li>Maintains multi-turn conversation context to ensure continuity</li>
+    </ul>
+
+    <h3 class="mt-4">What Sets It Apart</h3>
+    <p>
+        Gear Guide doesn’t just find relevant text it <strong>thinks diagnostically</strong>. It connects symptoms to problems, recommends test procedures, and identifies likely faulty components based on real-world reasoning paths.
+    </p>
+
+    <p>
+        It’s like having a mechanic’s brain, backed by a graph database and an LLM, available 24/7.
+    </p>
+
+    <h3 class="mt-4">Future Vision</h3>
+    <ul>
+        <li>Expand to domains like home appliances, electronics, and HVAC systems</li>
+        <li>Integrate with voice assistants and mobile interfaces for real-time diagnostics</li>
+        <li>Continuous learning from technician feedback and logs</li>
+        <li>Open SDK for developers to build their own RAG-powered advisors</li>
+    </ul>
+
+    <p class="mt-4">
+        We’re redefining what it means to "ask for help." Welcome to the future of diagnostics. Welcome to <strong>Gear Guide</strong>.
+    </p>
 </div>
 {% endblock %}

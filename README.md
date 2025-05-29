@@ -22,7 +22,7 @@ Gear Guide combines the best of semantic search and knowledge graphs:
      b. "Remote key not working" links to "keyless entry malfunction", a common user concern. 
 
 2. **Data Ingestion via LLM**
-     Manuals and troubleshooting documents were converted into structured XML using a custom PDF-to-Graph pipeline powered by GPT. Tags like <symptom>, <procedure>, and <test> were extracted to feed into the Neo4j graph—no manual curation needed. 
+     Manuals and troubleshooting documents were converted into structured XML using a custom PDF-to-Graph pipeline powered by GPT. Tags like `<symptom>, <procedure>, and <test>` were extracted to feed into the Neo4j graph—no manual curation needed. 
 
 3. **Hybrid Retrieval (Dense + Sparse)**
 
@@ -30,7 +30,7 @@ Gear Guide combines the best of semantic search and knowledge graphs:
 
      b. **Sparse Retrieval** uses full-text Lucene search to capture exact keyword hits. 
 
-     c. A **hybrid strategy** reranks results using a weighted score `(hybrid_score = α * dense + (1-α) * sparse)`, ensuring the best of both worlds: relevance and accuracy. 
+     c. A **Hybrid Strategy** reranks results using a weighted score `(hybrid_score = α * dense + (1-α) * sparse)`, ensuring the best of both worlds: relevance and accuracy. 
 
 4. **Multi-Turn Conversations**
      Every query goes through rephrasing and context injection, allowing the system to maintain continuity in chat sessions—an often-missing feature in traditional bots. 
@@ -124,7 +124,7 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 
 **Function:** `parse_and_insert_data(xml_content, component_name)`
 - Cleans XML from LLM output
-- Maps each XML tag to Neo4j label via `tag_to_label_map`
+- Maps each XML tag to Neo4j label via [`tag_to_label_map`](data/constants.py)
 - Creates and links graph nodes using Cypher queries
 - Handles nested problems and long lists efficiently
 - Uses APOC for conditional logic in Cypher (dynamic merging)
@@ -133,13 +133,11 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 
 ## Embedding-Based Dense Retrieval
 
-### Function: `get_openai_embedding(text)`
+### Function: `get_openai_embedding`
 - **Embedding Model:** `text-embedding-3-small`
 - Converts user queries into dense vectors
 
-### Vector Search
-
-**Function:** `vector_search(query_vector, node_label, top_k=3, threshold=0.7)`  
+**Function:** `vector_search(query_vector, node_label, top_k=10, threshold=0.7)`  
 - **Vector Index Name:** `vectorIndex_<NodeLabel>`  
 - **Cypher Syntax:**
   ```cypher
@@ -148,7 +146,7 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 
 ---
 
-## Sparse Retrieval (Planned)
+## Sparse Retrieval
 
 **Function:** `sparse_search(user_query, node_label)`  
 Uses full-text search index:
@@ -160,7 +158,7 @@ RETURN node.name, score
 
 ---
 
-## Hybrid_retriever
+## Hybrid Retriever
 
 **Function:** `Use ThreadPoolExecutor to parallelize vector and full-text search`  
 Combines dense and sparse scores:
@@ -257,15 +255,20 @@ hybrid_score = alpha * dense_score + (1 - alpha) * sparse_score
 ---
 ## Environment Configuration
 
-| Key               | Purpose                                        |
-| ----------------- | ---------------------------------------------- |
-| `NEO4J_URI`       | Neo4j DB connection URI                        |
-| `OPENAI_API_KEY`  | LLM + Embedding access                         |
-| `EMBEDDING_MODEL` | OpenAI model (default: text-embedding-3-small) |
-| `model`           | Chat model (default: gpt-4o)                   |
-| `alpha`           | Weight for hybrid scoring                      |
-| `top_k`           | Result cutoff                                  |
-| `threshold`       | Similarity threshold                           |
+| Key                             | Purpose                                        |
+| --------------------------------| ---------------------------------------------- |
+| `NEO4J_URI`                     | Neo4j DB connection URI                        |
+| `NEO4J_USERNAME`                | Neo4j DB Username                              |
+| `NEO4J_PASSWORD`                | Neo4j DB Password                              |
+| `OPENAI_API_KEY`                | LLM + Embedding access                         |
+| `EMBEDDING_MODEL`               | OpenAI model (default: text-embedding-3-small) |
+| `model`                         | Chat model (default: gpt-4o)                   |
+| `alpha`                         | Weight for hybrid scoring                      |
+| `top_k`                         | Result cutoff                                  |
+| `threshold`                     | Similarity threshold                           |
+| `SECRET_KEY`                    | Secret key for the sql database                |
+| `SQLALCHEMY_DATABASE_URI`       | Database connection server                     |
+
 
 
 ## Function Reference

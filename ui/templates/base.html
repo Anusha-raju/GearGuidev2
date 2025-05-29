@@ -146,7 +146,7 @@
       <div class="section-title">Recent</div>
       {% for chat_id, chat_title in recent_chats %}
         <a href="{{ url_for('chat', session=chat_id) }}" class="chat-link">
-          {{ chat_title[:10] ~ ("..." if chat_title|length > 30 else "") }}
+          {{ chat_title[:18] ~ ("..." if chat_title|length > 30 else "") }}
         </a>
       {% endfor %}
     </div>
