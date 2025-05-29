@@ -71,6 +71,8 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 
 ## Schema Overview
 
+![Graph Schema Overview](images/schema.png)
+
 ###  Node Types
 
 | Node Label        | Description                    |
@@ -133,7 +135,7 @@ By linking symptoms, problems, and test procedures with real-world semantics, we
 
 ## Embedding-Based Dense Retrieval
 
-### Function: `get_openai_embedding`
+**Function: `get_openai_embedding`**
 - **Embedding Model:** `text-embedding-3-small`
 - Converts user queries into dense vectors
 
@@ -214,6 +216,8 @@ hybrid_score = alpha * dense_score + (1 - alpha) * sparse_score
 
 ###  Query: "AC not cooling"
 
+![AC Graph Schema Overview](images/ac_schema.jpeg)
+
 **Traversal Path (Graph View):**
 ```
 (:Component {name: "air conditioning"}) 
@@ -221,7 +225,7 @@ hybrid_score = alpha * dense_score + (1 - alpha) * sparse_score
        └──[:HAS_SYMPTOM]──> (:Symptom {name: "low airflow"})
        └──[:HAS_PROCEDURES]──> (:Procedures {name: "check compressor pressure"})
 ```
-![Graph Schema Overview](images/schema.png)
+
 
 
 ---
