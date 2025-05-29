@@ -113,16 +113,7 @@ def get_related_nodes(node_name, node_type):
     except Exception as e:
         print(f"Error retrieving related nodes: {e}")
         return []
-
-
-# def process_top_nodes(results):
-#     """Process the top retrieved nodes and find their related nodes."""
-#     content = []
-#     for node in results:
-#         related_nodes = get_related_nodes(node["name"], node["node_type"][0])
-#         for rel in related_nodes:
-#             content.append(f"{rel['node_type']}: {rel['name']}")
-#     return content
+        
 
 def process_top_nodes(results):
     """Process the top retrieved nodes and find their related nodes in parallel."""
@@ -256,34 +247,6 @@ def retrieve_data(user_query):
     return final_results[:top_k]
 
 
-# def retrieve_data(user_query):
-#     """Retrieve top relevant nodes from Neo4j using vector similarity (Problem + Symptom)."""
-#     query_vector = get_openai_embedding(user_query)
-#     if query_vector is None:
-#         return []
-#
-#     # Define which labels to search and in which priority
-#     label_priority = ["Symptom", "Problem"]
-#     final_results = []
-#
-#     for label in label_priority:
-#         # matches = vector_search(query_vector, label)
-#         matches = hybrid_search(driver, user_query, query_vector, label, top_k=top_k, threshold=threshold)
-#
-#         # Deduplicate based on name
-#         seen = set()
-#         unique = []
-#         for match in sorted(matches, key=lambda x: x["score"], reverse=True):
-#             if match["name"] not in seen:
-#                 seen.add(match["name"])
-#                 unique.append(match)
-#         if len(unique) > 3:
-#             final_results.extend(unique[:3])
-#         else:
-#             final_results.extend(unique)
-#
-#     return final_results
-
 
 def final_call(user_query, content):
     """Generate the final LLM response using the retrieved context and rephrased query."""
@@ -315,6 +278,7 @@ Strict Constraints:
 - Only use the provided context.
 - Do NOT generate an answer if no relevant information is found.
 - Don't give long responses. Ensure responses are clear, concise, and helpful.
+- Give final response in a clear Markdown structure
 """
     return get_openai_response(prompt)
 
@@ -335,7 +299,7 @@ def rag_advisor(user_query):
     return response
 
 
-if __name__ == "__main__":
-    query = "Why is my AC not working in Yaris?"
-    response = rag_advisor(query)
-    print("\n💬 Final Response:\n", response)
+# if __name__ == "__main__":
+#     query = "Why is my AC not working in Yaris?"
+#     response = rag_advisor(query)
+#     print("\n💬 Final Response:\n", response)
