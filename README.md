@@ -1,2 +1,2 @@
-# GearGuidev2
-GearGuide version 2 with hybrid search
+# GearGuidev2.0
+Updated version of GearGuidev2.0
