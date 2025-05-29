@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block navbar_button %}
+<a class="btn btn-light me-2" href="{{ url_for('chat') }}">Chat Window</a>
+{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+<div style="padding: 1rem;">
+    <h1>About Us</h1>
+    <p>Welcome to our website! We are dedicated to providing the best service possible.</p>
+    <p>This is a simple About Us page where you can share information about your company or project.</p>
+</div>
+{% endblock %}
